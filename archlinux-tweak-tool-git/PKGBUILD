@@ -1,0 +1,26 @@
+# Maintainer: Erik Dubois <erik.dubois@gmail.com>
+pkgname=archlinux-tweak-tool-git
+_pkgname=archlinux-tweak-tool
+_destname1="/usr"
+_licensedir="/usr/share/arcolinux/licenses/"
+pkgver=22.06
+pkgrel=01
+pkgdesc="Arch Linux Tweak Tool or ATT"
+arch=('x86_64')
+url="https://github.com/arcolinux/${_pkgname}"
+license=('GPL3')
+depends=('polkit-gnome' 'lsb-release' 'reflector' 'neofetch' 'python-distro' 'w3m' 'python-numpy' 'python-psutil' 'arcolinux-mirrorlist-git' 'arcolinux-keyring' 'chaotic-mirrorlist' 'chaotic-keyring' 'endeavouros-keyring' 'endeavouros-mirrorlist')
+optdepends=('alacritty' 'alacritty-themes')
+makedepends=('git')
+options=(!strip !emptydirs)
+replaces=(arcolinux-tweak-tool-git)
+conflicts=('arcolinux-tweak-tool-git' 'arcolinux-tweak-tool-dev-git' 'archlinux-tweak-tool-dev-git')
+source=("${_pkgname}::git+${url}")
+sha256sums=('SKIP')
+install='readme.install'
+package() {
+	install -dm755 ${pkgdir}${_licensedir}${_pkgname}
+	install -m644  ${srcdir}/${_pkgname}/LICENSE ${pkgdir}${_licensedir}${_pkgname}
+
+	cp -r ${srcdir}/${_pkgname}/${_destname1} ${pkgdir}
+}

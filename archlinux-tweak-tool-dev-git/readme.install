@@ -1,0 +1,26 @@
+post_install() {
+    echo -e "\n** This application is coming from ArcoLinux."
+    echo -e "** It is meant to be working on that system."
+    echo -e "** By renaming the tool from ArcoLinux Tweak Tool to"
+    echo -e "** ArchLinux Tweak Tool our aim is to broaden our scope."
+    echo -e "** Following systems are supported."
+    echo
+    echo -e "** Arch Linux"
+    echo -e "** ArcoLinux"
+    echo -e "** Carli"
+    echo -e "** Alci"
+    echo -e "** Ariser"
+    echo -e "** EndeavourOS"
+    echo -e "** Garuda"
+    echo
+    echo -e "** That gives us already 7 challenges."
+    echo -e "** At a later stage we can add other Arch based distros."
+    echo -e "** Sway is not supported\n"
+}
+
+post_upgrade() {
+    post_install
+}
+
+
+
