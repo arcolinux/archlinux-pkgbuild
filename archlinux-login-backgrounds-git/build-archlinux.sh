@@ -48,7 +48,7 @@ if [[ $CHOICE == "1" ]] ; then
   echo "#########        Let us build the package in CHROOT "$(basename `pwd`)
   echo "#############################################################################################"
   tput sgr0
-  CHROOT=$HOME/Documents/chroot-arcolinux
+  CHROOT=$HOME/Documents/chroot-archlinux
   arch-nspawn $CHROOT/root pacman -Syu
   makechrootpkg -c -r $CHROOT
 
@@ -66,27 +66,6 @@ else
   makepkg --sign
 fi
 
-#echo "==>Begin of pwd " $pwd
-#echo "==>Begin of destiny " $destiny
-
-if [ $pwd == "arcolinux-calamares-tool-git" ] ; then
-	destiny=$destination3
-fi
-
-if [ $pwd == "arcolinux-calamares-tool-dev-git" ] ; then
-	destiny=$destination3
-fi
-
-if [ $pwd == "arcolinux-system-installation-git" ] ; then
-	destiny=$destination3
-fi
-
-if [ $pwd == "arcolinux-sddm-backgrounds-git" ] ; then
-  destiny=$destination5
-fi
-
-#echo "<==End of pwd " $pwd
-#echo "<==End of destiny " $destiny
 
 echo "Moving created files to " $destiny
 echo "#############################################################################################"
@@ -112,12 +91,3 @@ echo "##########################################################################
 echo "###################                       build done                   ######################"
 echo "#############################################################################################"
 tput sgr0
-
-
-if [ $pwd == "arcolinux-sddm-backgrounds-git" ] ; then
-  tput setaf 1
-  echo "#############################################################################################"
-  echo "Also update this repo : "$destination5
-  echo "#############################################################################################"
-  tput sgr0
-fi
