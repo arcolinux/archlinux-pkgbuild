@@ -19,9 +19,8 @@ post_install() {
     echo -e "** RebornOS"
     echo -e "** AmOs"
     echo -e "** Archcraft"
-    echo -e "** CachyOS"
     echo
-    echo -e "** That gives us already 15 distros/isos."
+    echo -e "** That gives us already 14 distros/isos."
     echo -e "** At a later stage we can add other Arch based distros."
     echo -e "** Sway is not supported\n"
 }

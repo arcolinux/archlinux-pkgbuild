@@ -1,0 +1,24 @@
+# Maintainer: Erik Dubois <erik.dubois@gmail.com>
+pkgname=archlinux-login-backgrounds-plain-git
+_pkgname=archlinux-login-backgrounds-plain
+_destname1="/usr/share/backgrounds/archlinux-login-backgrounds/"
+_licensedir="/usr/share/arcolinux/licenses/"
+pkgver=22.07
+pkgrel=02
+pkgdesc="Backgrounds for any login manager - plain colors"
+arch=('any')
+url="https://github.com/arcolinux/archlinux-login-backgrounds-plain"
+license=('GPL3')
+makedepends=('git')
+provides=("${pkgname}")
+options=(!strip !emptydirs)
+source=(${_pkgname}::"git+https://github.com/arcolinux/${_pkgname}.git")
+sha256sums=('SKIP')
+package() {
+	install -dm755 ${pkgdir}${_licensedir}${_pkgname}
+	install -m644  ${srcdir}/${_pkgname}/LICENSE ${pkgdir}${_licensedir}${_pkgname}
+
+	install -dm755 ${pkgdir}${_destname1}
+	cp -r  ${srcdir}/${_pkgname}${_destname1}* ${pkgdir}${_destname1}
+
+}

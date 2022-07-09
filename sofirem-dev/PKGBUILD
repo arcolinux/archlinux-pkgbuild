@@ -1,0 +1,24 @@
+# Maintainer: Erik Dubois <erik.dubois@gmail.com>
+pkgname=sofirem-dev-git
+_pkgname=sofirem-dev
+_destname1="/usr"
+_licensedir="/usr/share/arcolinux/licenses/"
+pkgver=22.07
+pkgrel=04
+pkgdesc="Software Installer Remover for Arch Linux based distros"
+arch=('x86_64')
+url="https://github.com/arcolinux/${_pkgname}"
+license=('GPL3')
+depends=('python-psutil' 'python-requests')
+makedepends=('git')
+options=(!strip !emptydirs)
+conflicts=('sofirem-git')
+source=("${_pkgname}::git+${url}")
+sha256sums=('SKIP')
+install='readme.install'
+package() {
+	install -dm755 ${pkgdir}${_licensedir}${_pkgname}
+	install -m644  ${srcdir}/${_pkgname}/LICENSE ${pkgdir}${_licensedir}${_pkgname}
+	rm -r ${srcdir}/${_pkgname}/${_destname1}/share/sofirem/__pycache__/
+	cp -r ${srcdir}/${_pkgname}/${_destname1} ${pkgdir}
+}
