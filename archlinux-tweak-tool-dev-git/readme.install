@@ -17,7 +17,6 @@ post_install() {
     echo -e "** ArchLinuxGUI"
     echo -e "** Axyl"
     echo -e "** RebornOS"
-    echo -e "** AmOs"
     echo -e "** Archcraft"
     echo -e "** CachyOS"
     echo

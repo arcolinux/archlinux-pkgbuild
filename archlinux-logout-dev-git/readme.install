@@ -3,8 +3,7 @@ post_install() {
     echo -e "** https://github.com/betterlockscreen/betterlockscreen"
     echo -e "** If you want betterlockscreen to be active after"
     echo -e "** sleep or suspend then type this in a terminal:"
-    echo -e "** systemctl enable betterlockscreen@username"
-    echo -e "** change username at the end with your login"
+    echo -e "** sudo systemctl enable betterlockscreen@\$USER"
     echo -e "** You can also use other lockings apps like slock**\n"
 }
 

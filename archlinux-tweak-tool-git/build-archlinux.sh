@@ -43,16 +43,12 @@ cd /tmp/tempbuild/
 
 if [[ $CHOICE == "1" ]] ; then
 
-  CHROOT=$HOME/Documents/chroot-archlinux-att
-
   tput setaf 2
   echo "#############################################################################################"
-  echo "#########        Let us build the package"
-  echo "#############################################################################################"
-  echo "CHROOT = "$CHROOT
+  echo "#########        Let us build the package in CHROOT "$(basename `pwd`)
   echo "#############################################################################################"
   tput sgr0
-
+  CHROOT=$HOME/Documents/chroot-archlinux
   arch-nspawn $CHROOT/root pacman -Syu
   makechrootpkg -c -r $CHROOT
 
