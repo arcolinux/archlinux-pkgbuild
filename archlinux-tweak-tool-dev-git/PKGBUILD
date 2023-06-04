@@ -3,8 +3,8 @@ pkgname=archlinux-tweak-tool-dev-git
 _pkgname=archlinux-tweak-tool-dev
 _destname1="/usr"
 _licensedir="/usr/share/arcolinux/licenses/"
-pkgver=22.12
-pkgrel=11
+pkgver=23.06
+pkgrel=02
 pkgdesc="Arch Linux Tweak Tool or ATT"
 arch=('x86_64')
 url="https://github.com/arcolinux/${_pkgname}"
@@ -24,6 +24,8 @@ install='readme.install'
 package() {
 	install -dm755 ${pkgdir}${_licensedir}${_pkgname}
 	install -m644  ${srcdir}/${_pkgname}/LICENSE ${pkgdir}${_licensedir}${_pkgname}
+	sed -i -e s/pkgversion/$pkgver/ $srcdir/${_pkgname}/usr/share/archlinux-tweak-tool/archlinux-tweak-tool.py
+	sed -i -e s/pkgrelease/$pkgrel/ $srcdir/${_pkgname}/usr/share/archlinux-tweak-tool/archlinux-tweak-tool.py
 
 	cp -r ${srcdir}/${_pkgname}/${_destname1} ${pkgdir}
 }

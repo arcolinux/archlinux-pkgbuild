@@ -1,5 +1,8 @@
 #!/bin/bash
+#CHROOT=$HOME/Documents/chroot-archlinux
 #https://wiki.archlinux.org/index.php/DeveloperWiki:Building_in_a_Clean_Chroot
+#https://archlinux.org/news/git-migration-completed/
+#https://wiki.archlinux.org/title/DeveloperWiki:HOWTO_Be_A_Packager
 
 destination1=$HOME"/ARCO/ARCOLINUX-REPO/arcolinux_repo/x86_64/"
 destination2=$HOME"/ARCO/ARCOLINUX-REPO/arcolinux_repo_3party/x86_64/"
@@ -45,7 +48,7 @@ if [[ $CHOICE == "1" ]] ; then
 
   tput setaf 2
   echo "#############################################################################################"
-  echo "#########        Let us build the package in CHROOT "$(basename `pwd`)
+  echo "#########        Let us build the package in CHROOT ~/Documents/chroot-archlinux"
   echo "#############################################################################################"
   tput sgr0
   CHROOT=$HOME/Documents/chroot-archlinux

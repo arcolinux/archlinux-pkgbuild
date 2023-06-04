@@ -3,10 +3,10 @@ post_install() {
     echo -e "** It is meant to be working on that system."
     echo -e "** By renaming the tool from ArcoLinux Tweak Tool to"
     echo -e "** ArchLinux Tweak Tool our aim is to broaden our scope."
-    echo -e "** Following systems are supported."
+    echo -e "** Following distros are supported."
     echo
-    echo -e "** Arch Linux"
     echo -e "** ArcoLinux"
+    echo -e "** Arch Linux"
     echo -e "** Carli"
     echo -e "** Alci"
     echo -e "** Ariser"
@@ -14,15 +14,16 @@ post_install() {
     echo -e "** Garuda"
 	echo -e "** Manjaro"
 	echo -e "** Xerolinux"
-    echo -e "** ArchLinuxGUI"
     echo -e "** Axyl"
     echo -e "** RebornOS"
     echo -e "** Archcraft"
     echo -e "** CachyOS"
+    echo -e "** Archman"
+    echo -e "** Biglinux"
+    echo -e "** Artix"
     echo
-    echo -e "** That gives us already 15 distros/isos."
-    echo -e "** At a later stage we can add other Arch based distros."
-    echo -e "** Sway is not supported\n"
+    echo -e "** That gives us already 16 distros/isos."
+    echo -e "** At a later stage we can add other Arch based distros.\n"
 }
 
 post_upgrade() {

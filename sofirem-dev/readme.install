@@ -1,9 +1,8 @@
 post_install() {
     echo -e "\n** Many applications are coming from the Arch Linux repos"
-    echo -e "** You may have other repos activated as well... "
-    echo -e "** Chaotic repo for example"
     echo
     echo -e "** Some packages however require the presence of the ArcoLinux repos"
+    echo -e "** You can add/remove the ArcoLinux repos from within the application"
     echo
 }
 

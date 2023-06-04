@@ -3,13 +3,13 @@ pkgname=sofirem-dev-git
 _pkgname=sofirem-dev
 _destname1="/usr"
 _licensedir="/usr/share/arcolinux/licenses/"
-pkgver=22.10
-pkgrel=03
+pkgver=23.06
+pkgrel=02
 pkgdesc="Software Installer Remover for Arch Linux based distros"
 arch=('x86_64')
 url="https://github.com/arcolinux/${_pkgname}"
 license=('GPL3')
-depends=('python-psutil' 'python-requests')
+depends=('python-psutil' 'python-requests' 'python-distro')
 makedepends=('git')
 options=(!strip !emptydirs)
 conflicts=('sofirem-git')
@@ -19,6 +19,10 @@ install='readme.install'
 package() {
 	install -dm755 ${pkgdir}${_licensedir}${_pkgname}
 	install -m644  ${srcdir}/${_pkgname}/LICENSE ${pkgdir}${_licensedir}${_pkgname}
-	rm -r ${srcdir}/${_pkgname}/${_destname1}/share/sofirem/__pycache__/
+	sed -i -e s/pkgversion/$pkgver/ $srcdir/${_pkgname}/usr/share/sofirem/sofirem.py
+	sed -i -e s/pkgrelease/$pkgrel/ $srcdir/${_pkgname}/usr/share/sofirem/sofirem.py
+	sed -i -e s/pkgversion/$pkgver/ $srcdir/${_pkgname}/usr/share/sofirem/ui/AboutDialog.py
+	sed -i -e s/pkgrelease/$pkgrel/ $srcdir/${_pkgname}/usr/share/sofirem/ui/AboutDialog.py
+	#rm -r ${srcdir}/${_pkgname}/${_destname1}/share/sofirem/__pycache__/
 	cp -r ${srcdir}/${_pkgname}/${_destname1} ${pkgdir}
 }
