@@ -4,7 +4,7 @@ _pkgname=archlinux-tweak-tool-dev
 _destname1="/usr"
 _licensedir="/usr/share/arcolinux/licenses/"
 pkgver=23.06
-pkgrel=02
+pkgrel=15
 pkgdesc="Arch Linux Tweak Tool or ATT"
 arch=('x86_64')
 url="https://github.com/arcolinux/${_pkgname}"
@@ -12,7 +12,7 @@ license=('GPL3')
 #endeavouros = error 'lsb-release'
 depends=('python-gobject' 'polkit-gnome' 'python-distro' 'python-numpy' 'python-psutil' \
 'xerolinux-mirrorlist' 'arcolinux-mirrorlist-git' 'arcolinux-keyring' 'chaotic-mirrorlist' \
-'chaotic-keyring' 'endeavouros-keyring' 'endeavouros-mirrorlist')
+'chaotic-keyring' 'endeavouros-keyring' 'endeavouros-mirrorlist' 'rebornos-keyring' 'rebornos-mirrorlist')
 optdepends=('alacritty' 'alacritty-themes' 'reflector' 'neofetch')
 makedepends=('git')
 options=(!strip !emptydirs)
