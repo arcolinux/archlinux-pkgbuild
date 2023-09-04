@@ -1,8 +1,8 @@
 # Maintainer: Erik Dubois <erik.dubois@gmail.com>
 pkgname=a-candy-beauty-icon-theme-git
 _pkgname=a-candy-beauty-icon-theme
-pkgver=23.06
-pkgrel=11
+pkgver=23.07
+pkgrel=01
 _destname1="/usr/share/icons/"
 _destname2="/usr/share/plasma/"
 pkgdesc="Beautyline icons completed for ArcoLinux + Candy icons"
