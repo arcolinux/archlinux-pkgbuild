@@ -1,7 +1,7 @@
 # Maintainer: Erik Dubois <erik.dubois@gmail.com>
 pkgname=a-candy-beauty-icon-theme-dev-git
 _pkgname=a-candy-beauty-icon-theme-dev
-pkgver=23.07
+pkgver=23.12
 pkgrel=01
 _destname1="/usr/share/icons/"
 _destname2="/usr/share/plasma/"
