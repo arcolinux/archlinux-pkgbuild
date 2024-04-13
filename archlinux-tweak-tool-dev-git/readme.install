@@ -24,8 +24,9 @@ post_install() {
     echo -e "** ParchLinux"
     echo -e "** StormOS"
     echo -e "** Mabox"
+    echo -e "** ArchBang"
     echo
-    echo -e "** That gives us already 18 distros/isos."
+    echo -e "** That gives us already 20 distros/isos."
     echo -e "** At a later stage we can add other Arch based distros.\n"
 }
 
