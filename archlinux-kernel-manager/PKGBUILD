@@ -1,0 +1,23 @@
+# Maintainer: fennec
+pkgname="archlinux-kernel-manager"
+_pkgname="archlinux-kernel-manager"
+_destname1="/usr"
+_licensedir="/usr/share/arcolinux/licenses/"
+pkgver=24.08
+pkgrel=01
+pkgdesc="Arch Linux Kernel Manager - Add/Remove Linux kernels"
+arch=('x86_64')
+url="https://github.com/arcolinux/${pkgname}"
+license=('GPL3')
+depends=('python-gobject' 'python-requests' 'python-tomlkit' 'python-distro' 'python-psutil' 'xorg-xauth')
+makedepends=('git')
+conflicts=('archlinux-kernel-manager-dev')
+options=(!strip !emptydirs)
+source=($_pkgname-${pkgver}-${pkgrel}::git+$url)
+sha256sums=('SKIP')
+package() {
+	install -dm755 ${pkgdir}${_licensedir}${_pkgname}
+	install -m644  ${srcdir}/${_pkgname}-${pkgver}-${pkgrel}/LICENSE ${pkgdir}${_licensedir}${_pkgname}
+	sed -i -e s/'${app_version}'/$pkgver/ $srcdir/${_pkgname}-${pkgver}-${pkgrel}/usr/share/${_pkgname}/archlinux-kernel-manager.py
+	cp -r ${srcdir}/${_pkgname}-${pkgver}-${pkgrel}/${_destname1} ${pkgdir}
+}

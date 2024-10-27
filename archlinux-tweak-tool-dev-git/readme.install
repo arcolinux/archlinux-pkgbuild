@@ -13,8 +13,6 @@ post_install() {
     echo -e "** EndeavourOS"
     echo -e "** Garuda"
 	echo -e "** Manjaro"
-	echo -e "** Xerolinux"
-    echo -e "** Axyl"
     echo -e "** RebornOS"
     echo -e "** Archcraft"
     echo -e "** CachyOS"
@@ -25,8 +23,8 @@ post_install() {
     echo -e "** StormOS"
     echo -e "** Mabox"
     echo -e "** ArchBang"
+    echo -e "** Crystal Linux"
     echo
-    echo -e "** That gives us already 20 distros/isos."
     echo -e "** At a later stage we can add other Arch based distros.\n"
 }
 
